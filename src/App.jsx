@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-// async await
+// TODO: Export the url to a .env
+// TODO: move this to a service file
 async function fecthAllTodos() {
   const res = await fetch("https://6531befe4d4c2e3f333d41d1.mockapi.io/todo");
   const data = await res.json();
@@ -8,6 +9,7 @@ async function fecthAllTodos() {
   return data;
 }
 
+// TODO: move this to a service file
 async function deleteTodoById(id) {
   const res = await fetch(
     // check https://documenter.getpostman.com/view/8970478/2s9YRB1XGz#f4625a38-15eb-4850-8b0a-dbca72b39a10
@@ -21,6 +23,7 @@ async function deleteTodoById(id) {
   return data;
 }
 
+// TODO: move this to a service file
 async function updateTodoById(id, todo) {
   const res = await fetch(
     // check https://documenter.getpostman.com/view/8970478/2s9YRB1XGz#f4625a38-15eb-4850-8b0a-dbca72b39a10
@@ -37,13 +40,14 @@ async function updateTodoById(id, todo) {
 
   return data;
 }
-//const getAllTodo = async () => {};
 
 function App() {
   const [list, setList] = useState([]);
 
   const [value, setValue] = useState("");
 
+  // use effect is a hook that is called when the component is mounted
+  // more info: https://reactjs.org/docs/hooks-effect.html
   useEffect(() => {
     fecthAllTodos().then((data) => {
       setList(data);
