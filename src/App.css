@@ -1,0 +1,104 @@
+header {
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+  font-size: 38px;
+  padding: 24px 0;
+  text-align: center;
+}
+
+form {
+  max-width: 1024px;
+  margin: 24px auto;
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+
+form input {
+  padding: 16px;
+  border: 1px solid #333;
+  flex-grow: 1;
+  border-radius: 16px;
+}
+
+form button {
+  border-radius: 0 16px 16px 0;
+  position: absolute;
+  padding: 0 16px;
+  top: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+
+form button:active{
+  outline: none;
+  border: 1px solid #fff;
+}
+
+form button:hover{
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+}
+
+main {
+  max-width: 1024px;
+  margin: 24px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.todo {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 16px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.todo input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  accent-color: #333;
+}
+
+.todo p {
+  flex: 1;
+  font-size: 18px;
+}
+
+.todo.completed {
+  text-decoration: line-through;
+}
+
+
+
+.delete {
+  background-color: brown;
+  padding: 8px;
+  border-radius: 25%;
+  border: 1px solid transparent;
+  color: white;
+  font-weight: bold;
+}
+
+.delete:hover {
+  background-color: transparent;
+  border: 1px solid brown;
+  color: brown;
+}
